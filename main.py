@@ -9,30 +9,24 @@ import xmlschema
 
 def main():
     xsd_file = open_file()
-    xml = []
+    xml = [] # new xml varible
     tree = ElementTree.ElementTree()
     cheque = ElementTree.Element("Cheque")
+    # TODO: get all types from xsd-schema in dict
+
     for a in xsd_file.elements["Cheque"].attrib.items():
-        # match attr.type:
-        #     case "load":
-        #         load()
-        #     case "save":
-        #         save()
-        #     case _:
-        #         default()
-        # cheque.attrib[attr] =
+        # TODO: match attributes with dict & write ti this or new dict
         print(a)
 
+    # TODO: create nesting on checque -> item
     item = ElementTree.Element("Bottle")
-    # a.attrib["name"] = "1"
+    # TODO: add nessesary attrinbutes in dict & write new file
+
+    a.attrib["name"] = "1"  # adding attributes
     cheque.append(item)
-    tree._setroot(cheque)
+    tree._setroot(cheque)  # like this
     tree.write(constant.FILESDIR + "/output.xml")
-    # pprint(dict(xsd_file.types))
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
